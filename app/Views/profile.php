@@ -14,7 +14,7 @@
                 border-bottom-left-radius: 0.5rem;
               "
             ><br><br>
-            <img src="<?=base_url("assets/img/gambar.jpg")?>" class="img-fluid my-5" style="width: 120px; border-radius: 100px;"/>
+            <img src="<?= $user['foto'] ?? '<default-foto>' ?>" class="img-fluid my-5" style="width: 120px; border-radius: 100px;"/>
             </div>
             <div class="col-md-8">
               <div class="card-body p-4">
@@ -23,17 +23,17 @@
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
                     <h6>Nama</h6>
-                    <p class="text-muted"><?=$nama?></p>
+                    <p class="text-muted"><?= $user['nama'] ?></p>
                   </div>
                   <div class="col-6 mb-3">
                     <h6>NPM</h6>
-                    <p class="text-muted"><?=$npm?></p>
+                    <p class="text-muted"><?= $user['npm'] ?></p>
                   </div>
                 </div>
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
                     <h6>Kelas</h6>
-                    <p class="text-muted"><?=$id_kelas?></p>
+                    <p class="text-muted"><?= $user['nama_kelas'] ?></p>
                   </div>
                 </div>
                 <div class="d-flex justify-content-start">

@@ -6,9 +6,12 @@
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Form Input</h3></div>
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create User</h3></div>
                     <div class="card-body">
-                        <form action="<?= base_url('user/store') ?>" method="POST">
+                        <form action="<?= base_url('user/store') ?>" method="POST" enctype="multipart/form-data">
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" name="foto" id="inputGroupFile02" placeholder="Upload File">
+                            </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 
                                 'is-invalid' : ''; ?>" name="nama" id="nama" placeholder="Nama" autofocus>
@@ -40,7 +43,7 @@
                                 <label>NPM</label>
                             </div><br>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-dark">Submit</button>
                             </div>
                         </form>
                     </div>

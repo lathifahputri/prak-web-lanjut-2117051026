@@ -7,6 +7,9 @@
                 <h3>Data Mahasiswa</h3>
             </div>
             <div class="card-body">
+                <form action="<?= base_url('user/create') ?>" method="POST">
+                    <button class="btn btn-warning">Tambah Data</button>
+                </form>
                 <table cellpadding="10" class="table table-striped">
                     <thead>
                         <tr>
@@ -25,8 +28,11 @@
                             <td><?= $user['npm'] ?></td>
                             <td><?= $user['nama_kelas'] ?></td>
                             <td>
-                                <i class="bi bi-pencil-square" type="button"></i>
-                                <i class="bi bi-trash3" type="button"></i>
+                                <button type="button" class="btn btn-secondary"><i class="bi bi-info-circle"></i>
+                                    <a href="<?= base_url('user/' . $user['id']) ?>"> Detail</a>
+                                </button>
+                                <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i> Edit</button>
+                                <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i> Delete</button>
                             </td>
                         </tr>
                         <?php

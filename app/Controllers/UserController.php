@@ -17,7 +17,7 @@ class UserController extends BaseController{
     public function index(){
         $data = [
             'title' => 'List User',
-            'users' => $this->userModel->getUser(),
+            'users' => $this->userModel->getUsers(),
         ];
         return view('list_user', $data);
     }
@@ -72,6 +72,15 @@ class UserController extends BaseController{
 
     public function store(){
         //dd($this->request->getVar());
+        $path = 'assets/upload/img/';
+
+        $foto = $this->request->getFile('foto');
+
+        $name = $foto->getRandomName();
+
+        if($foto->move($path, $name)){
+            $foto = base_url($path. $name);
+        }
 
         // validasi input
         if(!$this->validate([
@@ -86,9 +95,10 @@ class UserController extends BaseController{
         } 
 
         $this->userModel->saveUser([
-            'nama' => $this->request->getVar('nama'),
-            'npm' => $this->request->getVar('npm'),
-            'id_kelas' => $this->request->getVar('kelas'),
+            'nama'      => $this->request->getVar('nama'),
+            'npm'       => $this->request->getVar('npm'),
+            'id_kelas'  => $this->request->getVar('kelas'),
+            'foto'      => $foto
         ]);
 
         $userModel = new UserModel();
@@ -113,5 +123,16 @@ class UserController extends BaseController{
 
         // return view('profile', $data_new);
         return redirect()->to('/user');
+    }
+
+    public function show($id){
+        $user = $this->userModel->getUsers($id);
+
+        $data = [
+            'title'  => 'Profile',
+            'user'   => $user,
+        ];
+
+        return view('profile', $data);
     }
 }

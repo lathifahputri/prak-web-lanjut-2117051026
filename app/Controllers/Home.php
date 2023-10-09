@@ -20,14 +20,14 @@ class Home extends BaseController
     //     return view('profile', $data);
     // }
 
-    public function profile($nama = "", $kelas = "", $npm = "")
-    {
-        $data = [
-            'nama' => $nama,
-            'kelas' => $kelas,
-            'npm' => $npm
-        ];
+    // public function profile($nama = "", $kelas = "", $npm = "")
+    // {
+    //     $data = [
+    //         'nama' => $nama,
+    //         'kelas' => $kelas,
+    //         'npm' => $npm
+    //     ];
 
-        return view('profile', $data);
-    }
+    //     return view('profile', $data);
+    // }
 }
