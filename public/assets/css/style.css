@@ -37,3 +37,12 @@
   font-family: "Poppins", sans-serif !important;
   font-weight: bold !important;
 }
+
+.wrap {
+  display: flex;
+  align-items: center;
+}
+
+.wrap .edit a {
+  color: #fff;
+}

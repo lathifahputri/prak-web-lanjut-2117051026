@@ -28,11 +28,19 @@
                             <td><?= $user['npm'] ?></td>
                             <td><?= $user['nama_kelas'] ?></td>
                             <td>
-                                <button type="button" class="btn btn-secondary"><i class="bi bi-info-circle"></i>
-                                    <a href="<?= base_url('user/' . $user['id']) ?>"> Detail</a>
-                                </button>
-                                <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i> Edit</button>
-                                <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i> Delete</button>
+                                <div class="wrap">
+                                    <button type="button" class="btn btn-secondary me-2"><i class="bi bi-info-circle"></i>
+                                        <a href="<?= base_url('user/' . $user['id']) ?>"> Detail</a>
+                                    </button>
+                                    <button type="button" class="btn btn-success me-2 edit" ><i class="bi bi-pencil-square"></i>
+                                        <a href="<?= base_url('/user/' . $user['id'] . '/edit') ?>"> Edit</a>
+                                    </button>
+                                    <form action="<?= base_url('user/' . $user['id']) ?>" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <?= csrf_field() ?>
+                                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash3"></i>Delete</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         <?php
