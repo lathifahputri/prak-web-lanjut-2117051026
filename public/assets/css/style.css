@@ -1,39 +1,80 @@
+* {
+  list-style: none;
+  text-decoration: none !important;
+}
+
 .gradient-custom {
-  /* fallback for old browsers */
   background: #f6d365;
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to right bottom,
-    rgba(246, 211, 101, 1),
-    rgba(253, 160, 133, 1)
-  );
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(
-    to right bottom,
-    rgba(246, 211, 101, 1),
-    rgba(253, 160, 133, 1)
-  );
-}
-
-.btn-dark {
-  background-color: rgba(253, 160, 133, 1) !important;
-}
-
-.btn {
-  border-color: rgba(253, 160, 133, 1);
+  background: -webkit-linear-gradient(to right bottom, #abc4ff, #ccdbfd);
+  background: linear-gradient(to right bottom, #ccdbfd, #abc4ff);
 }
 
 .card-header {
-  background: linear-gradient(
-    to right bottom,
-    rgba(246, 211, 101, 1),
-    rgba(253, 160, 133, 1)
-  );
+  background: linear-gradient(to right bottom, #ccdbfd, #abc4ff);
+}
+
+.navbar {
+  background-color: #abc4ff;
+}
+
+.nav-item .nav-link {
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+.wrap-nav {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  text-transform: none !important;
+}
+
+.btn-primary {
+  background-color: #809bce !important;
+  border-color: #809bce !important;
+}
+
+.btn-dark {
+  background-color: #809bce !important;
+  border-color: #809bce !important;
 }
 
 .h3 {
   font-family: "Poppins", sans-serif !important;
   font-weight: bold !important;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+}
+
+.wrap a {
+  font-weight: 600;
+}
+
+.detail a {
+  color: #fff;
+}
+
+.edit a {
+  color: #fff;
+}
+
+.wrap-foto {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.img-fluid {
+  width: 200px;
+}
+
+.breadcrumb-item a {
+  color: #abc4ff;
 }

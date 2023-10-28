@@ -3,6 +3,12 @@
 <?= $this->section('content') ?>
 <section class="vh-100" style="background-color: #f4f5f7">
   <div class="container py-5 h-100">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="<?= base_url('/user')?>">Data Mahasiswa</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Profil</li>
+        </ol>
+    </nav>
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-lg-6 mb-4 mb-lg-0">
         <div class="card mb-3" style="border-radius: 0.5rem">
@@ -12,8 +18,8 @@
               style="
                 border-top-left-radius: 0.5rem;
                 border-bottom-left-radius: 0.5rem;
-              "
-            ><br><br>
+              ">
+              <br><br>
             <img src="<?= $user['foto'] ?? '<default-foto>' ?>" class="img-fluid my-5" style="width: 120px; border-radius: 100px;"/>
             </div>
             <div class="col-md-8">
