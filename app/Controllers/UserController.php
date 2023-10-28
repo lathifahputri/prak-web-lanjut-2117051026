@@ -66,7 +66,7 @@ class UserController extends BaseController{
         // validasi input
         if(!$this->validate([
             'nama' => 'required',
-            'npm' => 'required',
+            'npm' => 'required|is_unique[user.npm]',
         ])){
             $validation = \Config\Services::validation();
             return redirect()->to('/user/create')->withInput()->with('validation', $validation);
